@@ -1,7 +1,8 @@
 
 print("""==========================================
   Calculate # of days between two dates
-==========================================""")
+==========================================
+""")
 
 data1 = input("Date: ") #data1[-4:]=ano data1[2:4]=mes dia=data1[:2]
 data2 = input("Other date: ")
@@ -41,27 +42,22 @@ def MonthToDay(day,month):
 	return n
 
 a=gt(data2,data1)
-print(a)
-lower_date=a[0]; bigger_date=a[1]
+lower_date=a[0]; bigger_date=a[1] # type: ignore
 
 if int(lower_date[2:4])<=2 and int(bigger_date[2:4])<2:
 	for i in range(int(lower_date[-4:]),int(bigger_date[-4:])):
-		# print(i,bi6o(i))
 		if bi6o(i):
 			j+=1
 elif int(lower_date[2:4])>2 and int(bigger_date[2:4])<2:
 	for i in range(int(lower_date[-4:])+1,int(bigger_date[-4:])):
-		# print(i,bi6o(i))
 		if bi6o(i):
 			j+=1
 elif int(lower_date[2:4])<=2 and int(bigger_date[2:4])>2:
 	for i in range(int(lower_date[-4:]),int(bigger_date[-4:])+1):
-		# print(i,bi6o(i))
 		if bi6o(i):
 			j+=1
 elif int(lower_date[2:4])>2 and int(bigger_date[2:4])>2:
 	for i in range(int(lower_date[-4:])+1,int(bigger_date[-4:])+1):
-		#print(i,bi6o(i))
 		if bi6o(i):
 			j+=1
 
@@ -71,8 +67,8 @@ qtDia2 = MonthToDay(bigger_date[:2],bigger_date[2:4])
 tot = (qtDia2 - qtDia1) + j + 365*(int(bigger_date[-4:])-int(lower_date[-4:]))
 
 print(f'''
-    The difference between
-    {data1[:2]}/{data1[2:4]}/{data1[-4:]} and {data2[:2]}/{data2[2:4]}/{data2[-4:]} is:
+The difference between
+{data1[:2]}/{data1[2:4]}/{data1[-4:]} and {data2[:2]}/{data2[2:4]}/{data2[-4:]} is:
     {tot} days.
     '''
     )
